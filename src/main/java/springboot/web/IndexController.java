@@ -10,14 +10,11 @@ import springboot.config.auth.dto.SessionUser;
 import springboot.service.posts.PostsService;
 import springboot.web.dto.PostsResponseDto;
 
-import javax.servlet.http.HttpSession;
-
 @RequiredArgsConstructor
 @Controller
 public class IndexController {
 
     private final PostsService postsService;
-    private final HttpSession httpSession;
 
     @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user) {
